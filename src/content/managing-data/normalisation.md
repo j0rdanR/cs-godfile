@@ -3,7 +3,7 @@ published: true
 title: Normalisation
 modified: 2023-03-30T01:40:00.000Z
 preview: null
-pagination: /Managing Data/Normalisation
+path: /Managing Data/Normalisation
 ---
 
 *[1NF]: First Normal Form

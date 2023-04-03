@@ -19,8 +19,8 @@
           "required": false
         },
         {
-          "title": "Pagination",
-          "name": "pagination",
+          "title": "Page Path",
+          "name": "path",
           "type": "string",
           "required": false
         },

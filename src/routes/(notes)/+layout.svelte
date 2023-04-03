@@ -1,5 +1,4 @@
 
-
 <!-- <div class="'w-full h-full flex flex-col overflow-hidden border-2 border-green-500">
 
   <a!-- header --a>
@@ -68,6 +67,7 @@
 
 <script>
   import { onMount } from 'svelte';
+  import { base } from '$app/paths';
   let scrollElement;
   onMount(() => {
     scrollElement.scrollTop = localStorage.getItem('scrollPositon') || 0;
@@ -81,14 +81,14 @@
   <nav class="w-72 overflow-y-auto p-4 flex flex-col gap-8 bg-white border-r border-r-gray-200">
     <div class="flex flex-col gap-3 pl-2">
       <p class="-ml-2 -mb-1 text-sm font-medium text-gray-500">Introduction</p>
-      <a href="/">Home</a>
-      <a href="/contributing">Contributing</a>
-      <a href="/changelog">Changelog</a>
-      <a href="/syllabus">Syllabus</a>
+      <a href="{base}/">Home</a>
+      <a href="{base}/contributing">Contributing</a>
+      <a href="{base}/changelog">Changelog</a>
+      <a href="{base}/syllabus">Syllabus</a>
     </div>
     <div class="flex flex-col gap-3 pl-2">
       <p class="-ml-2 -mb-1 text-sm font-medium text-gray-500">Managing Data</p>
-      <a href="/managing-data/normalisation">Normalisation</a>
+      <a href="{base}/managing-data/normalisation">Normalisation</a>
 
     </div>    
   </nav>

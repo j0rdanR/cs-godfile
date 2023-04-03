@@ -8,6 +8,7 @@ banner:
   behaviour: ""
   content: This is a persistent message
 keywords: []
+path: /Intro/Syllabus
 ---
 
 

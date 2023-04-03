@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="../favicon.png" />
+		<meta name="viewport" content="width=device-width" />
+		<meta http-equiv="content-security-policy" content="">
+		<link href="../_app/immutable/assets/_layout.8cd855d5.css" rel="stylesheet">
+		<link rel="modulepreload" href="../_app/immutable/entry/start.d1bd4c00.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/index.d49c866b.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/singletons.9486e9f9.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/paths.d82f2e15.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/control.e7f5239e.js">
+		<link rel="modulepreload" href="../_app/immutable/entry/app.aef4c0a3.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/preload-helper.41c905a7.js">
+		<link rel="modulepreload" href="../_app/immutable/entry/_layout.svelte.b2ae7994.js">
+		<link rel="modulepreload" href="../_app/immutable/entry/_layout.ts.984db11e.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/_layout.da46b06b.js">
+		<link rel="modulepreload" href="../_app/immutable/entry/(notes)-layout.svelte.9b607635.js">
+		<link rel="modulepreload" href="../_app/immutable/entry/(notes)-_...route_-page.svelte.ecfd1bdc.js">
+		<link rel="modulepreload" href="../_app/immutable/entry/(notes)-_...route_-page.ts.c6ae39ad.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/_page.1aa84044.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/index.2defaa64.js"><title>Normalisation / The Godfile</title><!-- HEAD_svelte-19fz1ui_START --><!-- HEAD_svelte-19fz1ui_END -->
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents">
+
+
+<div class="flex flex-col h-screen"><header class="flex items-center justify-between px-4 h-16 bg-white border-b border-b-gray-200"><div><a href="/cs-godfile/"><div class="flex items-center gap-1 select-none"><span class="text-lg font-medium">Godfile</span>
+        <span class="font-bold text-xs uppercase text-white bg-gradient-to-tr from-red-700 to-amber-400 px-1 py-0.5 rounded" title="Version 0.0.5">Pre-Alpha</span></div></a></div>
+    <div><a href="/cs-godfile/contributing" class="font-medium text-gray-700 border-b-2 border-b-transparent hover:border-b-sky-500 hover:text-sky-600 transition">Contribute</a></div></header>
+
+  
+  
+  <div class="flex-1 overflow-hidden">
+
+
+
+
+
+
+
+<div class="flex w-full h-full"><nav class="w-72 overflow-y-auto p-4 flex flex-col gap-8 bg-white border-r border-r-gray-200"><div class="flex flex-col gap-3 pl-2"><p class="-ml-2 -mb-1 text-sm font-medium text-gray-500">Introduction</p>
+      <a href="/cs-godfile/">Home</a>
+      <a href="/cs-godfile/contributing">Contributing</a>
+      <a href="/cs-godfile/changelog">Changelog</a>
+      <a href="/cs-godfile/syllabus">Syllabus</a></div>
+    <div class="flex flex-col gap-3 pl-2"><p class="-ml-2 -mb-1 text-sm font-medium text-gray-500">Managing Data</p>
+      <a href="/cs-godfile/managing-data/normalisation">Normalisation</a></div></nav>
+  
+  <div class="flex-1 overflow-y-auto scroll-smooth">
+
+
+
+
+
+<div class="flex justify-between border-amber-400"><main class="prose flex-1 ml-16 mr-8 pt-12 pb-16">
+		
+		<h1 id="normalisation">Normalisation</h1>
+<p>Normalisation is a process. We use it in order to identify and eliminate data anomalies and redundancies to improve the integrity and storage of data in a relational database.</p>
+<h2 id="unnormalised-data">Unnormalised data</h2>
+<p>Unnormalised data can lead to anomalies (insert, update, delete).</p>
+<p>We will use the following example table:</p>
+
+<table><thead><tr><th>OrderId</th>
+<th>OrderDate</th>
+<th>CustomerId</th>
+<th>CustomerName</th>
+<th>CustomerAddress</th>
+<th>CityStatePostcode</th>
+<th>ProductId</th>
+<th>ProductDescription</th>
+<th>Quantity</th>
+<th>ProductPrice</th></tr></thead>
+<tbody><tr><td>5258</td>
+<td>27/3/2013</td>
+<td>32</td>
+<td>Computer Training Center</td>
+<td>1 Plenty Rd</td>
+<td>Bundoora, Victoria, 3086</td>
+<td>P123<br>P234<br>P345</td>
+<td>Bookcase<br>Cabinet<br>Table</td>
+<td>4<br>2<br>1</td>
+<td>200<br>500<br>150</td></tr></tbody></table>
+<h2 id="first-normal-form-1nf">First Normal Form (<abbr title="First Normal Form">1NF</abbr>)</h2>
+<p>For a database schema to be in <abbr title="First Normal Form">1NF</abbr>, it must fit the following criteria:</p>
+<ul><li>A valid primary key exists.</li>
+<li>Attributes are functionally dependent on all or part of the key.</li>
+<li>Attributes are atomic.</li>
+<li>No repeating groups.</li></ul>
+<h3 id="applying-to-our-example">Applying to our example</h3>
+<p>Notice how in the unnormalised data there are repeating groups of products in the table. We must separate these into their own seperate entries, as shown below. The <code>CityStatePostcode</code> attribute has also been split in the same step to ensure all attributes are fully atomic.</p>
+<p><code>Orders</code> table:</p>
+<table><thead><tr><th>OrderId</th>
+<th>OrderDate</th>
+<th>CustomerId</th>
+<th>CustomerName</th>
+<th>CustomerAddress</th>
+<th>City</th>
+<th>State</th>
+<th>Postcode</th>
+<th>ProductId</th>
+<th>ProductDescription</th>
+<th>ProductQuantity</th>
+<th>ProductPrice</th></tr></thead>
+<tbody><tr><td>5258</td>
+<td>27/3/2013</td>
+<td>32</td>
+<td>Computer Training Center</td>
+<td>1 Plenty Rd</td>
+<td>Bundoora</td>
+<td>Victoria</td>
+<td>3086</td>
+<td>P123</td>
+<td>Bookcase</td>
+<td>4</td>
+<td>200</td></tr>
+<tr><td>5258</td>
+<td>27/3/2013</td>
+<td>32</td>
+<td>Computer Training Center</td>
+<td>1 Plenty Rd</td>
+<td>Bundoora</td>
+<td>Victoria</td>
+<td>3086</td>
+<td>P234</td>
+<td>Cabinet</td>
+<td>2</td>
+<td>500</td></tr>
+<tr><td>5258</td>
+<td>27/3/2013</td>
+<td>32</td>
+<td>Computer Training Center</td>
+<td>1 Plenty Rd</td>
+<td>Bundoora</td>
+<td>Victoria</td>
+<td>3086</td>
+<td>P345</td>
+<td>Table</td>
+<td>1</td>
+<td>150</td></tr></tbody></table>
+<p>However, this means there is no longer a valid primary key, as the <code>OrderId</code> attribute is not unique across all records. To resolve this, we will create another table for the product:</p>
+<p><code>Orders</code> table:</p>
+<table><thead><tr><th>OrderId</th>
+<th>OrderDate</th>
+<th>CustomerId</th>
+<th>CustomerName</th>
+<th>CustomerAddress</th>
+<th>City</th>
+<th>State</th>
+<th>Postcode</th></tr></thead>
+<tbody><tr><td>5258</td>
+<td>27/3/2013</td>
+<td>32</td>
+<td>Computer Training Center</td>
+<td>1 Plenty Rd</td>
+<td>Bundoora</td>
+<td>Victoria</td>
+<td>3086</td></tr>
+<tr><td>5258</td>
+<td>27/3/2013</td>
+<td>32</td>
+<td>Computer Training Center</td>
+<td>1 Plenty Rd</td>
+<td>Bundoora</td>
+<td>Victoria</td>
+<td>3086</td></tr>
+<tr><td>5258</td>
+<td>27/3/2013</td>
+<td>32</td>
+<td>Computer Training Center</td>
+<td>1 Plenty Rd</td>
+<td>Bundoora</td>
+<td>Victoria</td>
+<td>3086</td></tr></tbody></table>
+<p><code>Products</code> table:</p>
+<table><thead><tr><th>OrderId FK</th>
+<th>ProductId</th>
+<th>Description</th>
+<th>Quantity</th>
+<th>Price</th></tr></thead>
+<tbody><tr><td>5258</td>
+<td>P123</td>
+<td>Bookcase</td>
+<td>4</td>
+<td>200</td></tr>
+<tr><td>5258</td>
+<td>P234</td>
+<td>Cabinet</td>
+<td>2</td>
+<td>500</td></tr>
+<tr><td>5258</td>
+<td>P345</td>
+<td>Table</td>
+<td>1</td>
+<td>150</td></tr></tbody></table>
+<p class="hint tip">Using OrderId and ProductId as a <u>composite key</u> is acceptable as each product can only occur in a given order once.</p>
+<p>Now our database is in <abbr title="First Normal Form">1NF</abbr>, as there are no repeating groups, each table has a primary key, attributes are atomic, and they all depend on all or part of the key.</p>
+<h3 id="anomalies">Anomalies</h3>
+<p>There are a few issues which make this database poorly designed and open it up to anomalies. Some of them may include:</p>
+<ul><li>You cannot insert a new product without it being associated with an order.</li>
+<li>Conversely, you cannot delete an order without risking deleting a product entirely.</li>
+<li>To update a product, you must update each order that has the product in it.</li>
+<li>This also leads to redundant data, as multiple orders may contain the same product, but this design would require it to be listed in each record.</li></ul>
+<h2 id="second-normal-form-2nf">Second Normal Form (<abbr title="Second Normal Form">2NF</abbr>)</h2>
+<p>For a database schema to be in <abbr title="Second Normal Form">2NF</abbr>, it must fit the following criteria:</p>
+<ul><li>Must be in <abbr title="First Normal Form">1NF</abbr>, and meet all of its criteria.</li>
+<li>No partial dependencies - non-key attributes that do not depend on the primary key must be removed.</li></ul>
+<h3 id="fixing-our-database">Fixing our database</h3>
+<p>Previously we identified that leaving our database in <abbr title="First Normal Form">1NF</abbr> left it open to insert, deletion, and update anomalies. To fix this, we must remove all partial dependencies.</p>
+<div data-remark-code-title="true" data-language="scss">Our database</div>
+<pre class="language-scss"><!-- HTML_TAG_START --><code class="language-scss"><span class="token selector">Orders </span><span class="token punctuation">&#123;</span>
+    [PK] OrderId
+    OrderDate
+    CustomerId
+    CustomerName
+    Address
+    City
+    State
+    Postcode
+<span class="token punctuation">&#125;</span>
+
+<span class="token selector">Products </span><span class="token punctuation">&#123;</span>
+    [PK] OrderId [FK]
+    [PK] ProductId
+    Description
+    Quantity
+    Price
+<span class="token punctuation">&#125;</span></code><!-- HTML_TAG_END --></pre>
+<p class="hint tip">This is just another way of representing the structure of our tables. We don’t really need to visualise the actual data anymore, so instead it will be omitted.</p>
+<p>Looking at the <code>Products</code> table, we can see that there are parital dependencies:</p>
+<ul><li><code>Description</code> and <code>Price</code> depend on the <code>ProductId</code>, but is not relevant to the <code>OrderId</code>.</li>
+<li>Similarly, <code>Quantity</code> depends on the <code>OrderId</code>, but not <code>ProductId</code>.</li></ul>
+<p>These are called partial dependencies because they depend on a part of the key, or not the whole key. If you think about it in the context of the question, it doesn’t make sense to store the order details with the product’s details. From first glance the <code>quantity</code> attribute is not relevant to the product details, it is relevant to the order.</p>
+<p>The next move would be to restructure our tables to suit this requirement:</p>
+<pre class="language-scss"><!-- HTML_TAG_START --><code class="language-scss"><span class="token selector">Orders </span><span class="token punctuation">&#123;</span>
+    [PK] OrderId
+    OrderDate
+    CustomerId
+    CustomerName
+    Address
+    City
+    State
+    Postcode
+<span class="token punctuation">&#125;</span>
+
+<span class="token selector">OrderProducts </span><span class="token punctuation">&#123;</span>
+    [PK] OrderId [FK]
+    [PK] ProductId [FK]
+    Quantity
+<span class="token punctuation">&#125;</span>
+
+<span class="token selector">Products </span><span class="token punctuation">&#123;</span>
+    [PK] ProductId
+    Description
+    Price
+<span class="token punctuation">&#125;</span></code><!-- HTML_TAG_END --></pre>
+<p>Note the creation of a new table: <code>OrderProducts</code>. It uses a composite key from <code>OrderId</code> and <code>ProductId</code>. You may think that <code>quantity</code> should belong to the <code>Orders</code> table, but that wouldn’t work, because there is no way to indicate what product the quantity is for, and it wouldn’t work for orders with multiple products.</p>
+<p>This is because there is a many-to-many relationship between an order and a product. Each order can have multiple products on it, and each product can be used on multiple orders. The <code>OrderProducts</code> table is essentially a joining table.</p>
+<p class="hint tip">This exposes one of the reasons we must normalise our database structure. A many-to-many relationship cannot exist in a relational database.</p>
+<p>Now our tables are in <abbr title="Second Normal Form">2NF</abbr>. The <code>Orders</code> table was not mentioned because it happened to contain no partial dependencies, but you should always check before proceeding that all tables meet the requirements.</p>
+<h2 id="third-normal-form-3nf">Third Normal Form (<abbr title="Third Normal Form">3NF</abbr>)</h2>
+<p>For a database schema to be in <abbr title="Third Normal Form">3NF</abbr>, it must fit the following criteria:</p>
+<ul><li>Must be in <abbr title="Second Normal Form">2NF</abbr>, and meet all of its criteria.</li>
+<li>No transitive dependencies - non-key attributes which depend on other non-key attributes must be removed.</li></ul>
+<h3 id="finalising-our-database-structure">Finalising our database structure</h3>
+<blockquote><p>Scroll up to see the tables in <abbr title="Second Normal Form">2NF</abbr></p></blockquote>
+<p>Once again, there are transitive dependencies in our structure which must be resolved:</p>
+<ul><li><code>CustomerName</code> (and others) depends on <code>CustomerId</code> - both are non-key attributes. We will also rename this field to just <code>Name</code> for simplicity.</li></ul>
+<p class="hint warn">While it may appear to be a key due to its name, <code>CustomerId</code> is a non-key attribute. It is not used as a primary key in the <code>Orders</code> table, and is not a foreign key to any other table.</p>
+<pre class="language-scss"><!-- HTML_TAG_START --><code class="language-scss"><span class="token selector">Customers </span><span class="token punctuation">&#123;</span>
+    [PK] CustomerId
+    Name
+    Address
+    City
+    State
+    Postcode
+<span class="token punctuation">&#125;</span>
+
+<span class="token selector">Orders </span><span class="token punctuation">&#123;</span>
+    [PK] OrderId
+    CustomerId [FK]
+    OrderDate
+<span class="token punctuation">&#125;</span>
+
+<span class="token selector">OrderProducts </span><span class="token punctuation">&#123;</span>
+    [PK] OrderId [FK]
+    [PK] ProductId [FK]
+    Quantity
+<span class="token punctuation">&#125;</span>
+
+<span class="token selector">Products </span><span class="token punctuation">&#123;</span>
+    [PK] ProductId
+    Description
+    Price
+<span class="token punctuation">&#125;</span></code><!-- HTML_TAG_END --></pre>
+<p>Again, the other tables are already free of transitive dependencies, making this finally in <abbr title="Third Normal Form">3NF</abbr> 😄. From here, you may create an Entity Relationship Diagram (ERD) from these tables.</p></main>
+	<div class="pt-12"><div class="sticky top-4 p-8 pr-16 flex flex-col gap-2 text-sm bg-white rounded-lg"><div class="border bg-gray-50 text-gray-700 rounded-md p-2 mb-2 space-y-2">
+				<div class="flex items-center gap-1"><svg width="20" height="20" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.75 3A3.25 3.25 0 0 1 21 6.25v11.5A3.25 3.25 0 0 1 17.75 21H6.25A3.25 3.25 0 0 1 3 17.75V6.25A3.25 3.25 0 0 1 6.25 3h11.5Zm1.75 5.5h-15v9.25c0 .966.784 1.75 1.75 1.75h11.5a1.75 1.75 0 0 0 1.75-1.75V8.5Zm-11.75 6a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5Zm4.25 0a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5Zm-4.25-4a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5Zm4.25 0a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5Zm4.25 0a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5Zm1.5-6H6.25A1.75 1.75 0 0 0 4.5 6.25V7h15v-.75a1.75 1.75 0 0 0-1.75-1.75Z" fill="currentColor"></path></svg>
+					<p>Modified 4 days ago</p></div>
+
+				
+				<div class="flex items-center gap-1"><svg width="20" height="20" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 9.502V8.75a2.25 2.25 0 0 0-2.25-2.25h-5.725l-2.38-1.98A2.25 2.25 0 0 0 8.204 4H4.25A2.25 2.25 0 0 0 2 6.25l-.004 11.5A2.25 2.25 0 0 0 4.246 20H18.47a1.75 1.75 0 0 0 1.698-1.325l1.75-6.998a1.75 1.75 0 0 0-1.698-2.175H20ZM4.25 5.5h3.956a.75.75 0 0 1 .48.173l2.588 2.154a.75.75 0 0 0 .48.173h5.996a.75.75 0 0 1 .75.75v.752H6.424a2.25 2.25 0 0 0-2.183 1.704l-.744 2.978L3.5 6.25a.75.75 0 0 1 .75-.75Zm1.447 6.07a.75.75 0 0 1 .727-.568H20.22a.25.25 0 0 1 .242.31l-1.75 6.999a.25.25 0 0 1-.242.189H4.285a.25.25 0 0 1-.243-.31l1.655-6.62Z" fill="currentColor"></path></svg>
+						<div class="flex items-center gap-1"><p>Managing Data</p>
+								<div class="text-gray-400 last:hidden"><svg width="14" height="14" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M11.073 18.839c-.808.707-2.073.133-2.073-.94V6.101c0-1.074 1.265-1.648 2.073-.94l6.31 5.521a1.75 1.75 0 0 1 0 2.634l-6.31 5.522Zm-.573-1.492 5.896-5.159a.25.25 0 0 0 0-.376L10.5 6.653v10.694Z" fill="currentColor"></path></svg>
+								</div><p>Normalisation</p>
+								<div class="text-gray-400 last:hidden"><svg width="14" height="14" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M11.073 18.839c-.808.707-2.073.133-2.073-.94V6.101c0-1.074 1.265-1.648 2.073-.94l6.31 5.521a1.75 1.75 0 0 1 0 2.634l-6.31 5.522Zm-.573-1.492 5.896-5.159a.25.25 0 0 0 0-.376L10.5 6.653v10.694Z" fill="currentColor"></path></svg>
+								</div></div></div></div>
+			
+			
+			<p class="text-xs font-medium uppercase text-gray-500 mb-1 border-b p-1.5 min-w-[196px]">On this page</p>
+				
+					<a class="text-gray-500 hover:text-gray-900 transition" href="#normalisation"><p><!-- HTML_TAG_START -->&nbsp&nbsp&nbsp&nbsp<!-- HTML_TAG_END -->Normalisation</p></a>
+					<a class="text-gray-500 hover:text-gray-900 transition" href="#unnormalised-data"><p><!-- HTML_TAG_START -->&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<!-- HTML_TAG_END -->Unnormalised data</p></a>
+					<a class="text-gray-500 hover:text-gray-900 transition" href="#first-normal-form-1nf"><p><!-- HTML_TAG_START -->&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<!-- HTML_TAG_END -->First Normal Form (1NF)</p></a>
+					<a class="text-gray-500 hover:text-gray-900 transition" href="#applying-to-our-example"><p><!-- HTML_TAG_START -->&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<!-- HTML_TAG_END -->Applying to our example</p></a>
+					<a class="text-gray-500 hover:text-gray-900 transition" href="#anomalies"><p><!-- HTML_TAG_START -->&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<!-- HTML_TAG_END -->Anomalies</p></a>
+					<a class="text-gray-500 hover:text-gray-900 transition" href="#second-normal-form-2nf"><p><!-- HTML_TAG_START -->&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<!-- HTML_TAG_END -->Second Normal Form (2NF)</p></a>
+					<a class="text-gray-500 hover:text-gray-900 transition" href="#fixing-our-database"><p><!-- HTML_TAG_START -->&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<!-- HTML_TAG_END -->Fixing our database</p></a>
+					<a class="text-gray-500 hover:text-gray-900 transition" href="#third-normal-form-3nf"><p><!-- HTML_TAG_START -->&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<!-- HTML_TAG_END -->Third Normal Form (3NF)</p></a>
+					<a class="text-gray-500 hover:text-gray-900 transition" href="#finalising-our-database-structure"><p><!-- HTML_TAG_START -->&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<!-- HTML_TAG_END -->Finalising our database structure</p></a></div></div></div></div></div></div></div>
+
+
+			
+			<script>
+				{
+					__sveltekit_dgwotw = {
+						env: {},
+						assets: "/cs-godfile",
+						base: new URL("..", location).pathname.slice(0, -1),
+						element: document.currentScript.parentElement
+					};
+
+					const data = [null,null,null];
+
+					Promise.all([
+						import("../_app/immutable/entry/start.d1bd4c00.js"),
+						import("../_app/immutable/entry/app.aef4c0a3.js")
+					]).then(([kit, app]) => {
+						kit.start(app, __sveltekit_dgwotw.element, {
+							node_ids: [0, 2, 4],
+							data,
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+		</div>
+	</body>
+</html>

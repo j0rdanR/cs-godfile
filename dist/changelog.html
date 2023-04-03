@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="./favicon.png" />
+		<meta name="viewport" content="width=device-width" />
+		<meta http-equiv="content-security-policy" content="">
+		<link href="./_app/immutable/assets/_layout.8cd855d5.css" rel="stylesheet">
+		<link rel="modulepreload" href="./_app/immutable/entry/start.d1bd4c00.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/index.d49c866b.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/singletons.9486e9f9.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/paths.d82f2e15.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/control.e7f5239e.js">
+		<link rel="modulepreload" href="./_app/immutable/entry/app.aef4c0a3.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/preload-helper.41c905a7.js">
+		<link rel="modulepreload" href="./_app/immutable/entry/_layout.svelte.b2ae7994.js">
+		<link rel="modulepreload" href="./_app/immutable/entry/_layout.ts.984db11e.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/_layout.da46b06b.js">
+		<link rel="modulepreload" href="./_app/immutable/entry/(notes)-layout.svelte.9b607635.js">
+		<link rel="modulepreload" href="./_app/immutable/entry/(notes)-_...route_-page.svelte.ecfd1bdc.js">
+		<link rel="modulepreload" href="./_app/immutable/entry/(notes)-_...route_-page.ts.c6ae39ad.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/_page.1aa84044.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/index.2defaa64.js"><title>Changelog / The Godfile</title><!-- HEAD_svelte-19fz1ui_START --><!-- HEAD_svelte-19fz1ui_END -->
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents">
+
+
+<div class="flex flex-col h-screen"><header class="flex items-center justify-between px-4 h-16 bg-white border-b border-b-gray-200"><div><a href="/cs-godfile/"><div class="flex items-center gap-1 select-none"><span class="text-lg font-medium">Godfile</span>
+        <span class="font-bold text-xs uppercase text-white bg-gradient-to-tr from-red-700 to-amber-400 px-1 py-0.5 rounded" title="Version 0.0.5">Pre-Alpha</span></div></a></div>
+    <div><a href="/cs-godfile/contributing" class="font-medium text-gray-700 border-b-2 border-b-transparent hover:border-b-sky-500 hover:text-sky-600 transition">Contribute</a></div></header>
+
+  
+  
+  <div class="flex-1 overflow-hidden">
+
+
+
+
+
+
+
+<div class="flex w-full h-full"><nav class="w-72 overflow-y-auto p-4 flex flex-col gap-8 bg-white border-r border-r-gray-200"><div class="flex flex-col gap-3 pl-2"><p class="-ml-2 -mb-1 text-sm font-medium text-gray-500">Introduction</p>
+      <a href="/cs-godfile/">Home</a>
+      <a href="/cs-godfile/contributing">Contributing</a>
+      <a href="/cs-godfile/changelog">Changelog</a>
+      <a href="/cs-godfile/syllabus">Syllabus</a></div>
+    <div class="flex flex-col gap-3 pl-2"><p class="-ml-2 -mb-1 text-sm font-medium text-gray-500">Managing Data</p>
+      <a href="/cs-godfile/managing-data/normalisation">Normalisation</a></div></nav>
+  
+  <div class="flex-1 overflow-y-auto scroll-smooth">
+
+
+
+
+
+<div class="flex justify-between border-amber-400"><main class="prose flex-1 ml-16 mr-8 pt-12 pb-16">
+		
+		<h1 id="changelog">Changelog</h1>
+<p class="hint tip">This is the application changelog. You can track changes and merges on the Github repository.</p>
+<h2 id="version-005-pre-alpha"><code>Version 0.0.5 Pre Alpha</code></h2>
+<p>This is not a stable release of the application. It is a preview version intended for proof of concept. While content is accessible, you may encounter many issues working with the app.</p>
+<h3 id="changes">Changes</h3>
+<ul><li>Added support for the Frontmatter CMS Vscode extension. You can now manage content with a GUI.</li>
+<li>UI now shows when the document was last updated. This value must be updated manually once you finish making changes.</li>
+<li>While viewing the Godfile, there is now a sidebar to make navigation easier.</li></ul>
+<h3 id="issues">Issues</h3>
+<ul><li>The web app is not responsive. You may encounter issues when viewing it on smaller screens</li>
+<li>Preview mode is permanently enabled for all users. There is no way to authenticate a user as eligible for previews.</li>
+<li>Large tables overflow from the <code>&lt;main&gt;</code> container, being hidden from the view by the table of contents.</li>
+<li>There is currently no way to inject data from Svelte to a markdown file. Mdsvex makes this possible, but it has not been setup.</li>
+<li>Inserting a banner from frontmatter isn’t detected by Tailwind, and as a result, styles don’t apply until refresh.</li>
+<li>I need to setup a basic design system for the UI. Currently it is just a free for all, where elements may appear inconsistent.</li></ul></main>
+	<div class="pt-12"><div class="sticky top-4 p-8 pr-16 flex flex-col gap-2 text-sm bg-white rounded-lg"><div class="border bg-gray-50 text-gray-700 rounded-md p-2 mb-2 space-y-2">
+				<div class="flex items-center gap-1"><svg width="20" height="20" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.75 3A3.25 3.25 0 0 1 21 6.25v11.5A3.25 3.25 0 0 1 17.75 21H6.25A3.25 3.25 0 0 1 3 17.75V6.25A3.25 3.25 0 0 1 6.25 3h11.5Zm1.75 5.5h-15v9.25c0 .966.784 1.75 1.75 1.75h11.5a1.75 1.75 0 0 0 1.75-1.75V8.5Zm-11.75 6a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5Zm4.25 0a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5Zm-4.25-4a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5Zm4.25 0a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5Zm4.25 0a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5Zm1.5-6H6.25A1.75 1.75 0 0 0 4.5 6.25V7h15v-.75a1.75 1.75 0 0 0-1.75-1.75Z" fill="currentColor"></path></svg>
+					<p>Modified 3 days ago</p></div>
+
+				
+				</div>
+			
+			
+			<p class="text-xs font-medium uppercase text-gray-500 mb-1 border-b p-1.5 min-w-[196px]">On this page</p>
+				
+					<a class="text-gray-500 hover:text-gray-900 transition" href="#changelog"><p><!-- HTML_TAG_START -->&nbsp&nbsp&nbsp&nbsp<!-- HTML_TAG_END -->Changelog</p></a>
+					<a class="text-gray-500 hover:text-gray-900 transition" href="#version-0.0.5-pre-alpha"><p><!-- HTML_TAG_START -->&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<!-- HTML_TAG_END -->Version 0.0.5 Pre Alpha</p></a>
+					<a class="text-gray-500 hover:text-gray-900 transition" href="#changes"><p><!-- HTML_TAG_START -->&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<!-- HTML_TAG_END -->Changes</p></a>
+					<a class="text-gray-500 hover:text-gray-900 transition" href="#issues"><p><!-- HTML_TAG_START -->&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<!-- HTML_TAG_END -->Issues</p></a></div></div></div></div></div></div></div>
+
+
+			
+			<script>
+				{
+					__sveltekit_dgwotw = {
+						env: {},
+						assets: "/cs-godfile",
+						base: new URL(".", location).pathname.slice(0, -1),
+						element: document.currentScript.parentElement
+					};
+
+					const data = [null,null,null];
+
+					Promise.all([
+						import("./_app/immutable/entry/start.d1bd4c00.js"),
+						import("./_app/immutable/entry/app.aef4c0a3.js")
+					]).then(([kit, app]) => {
+						kit.start(app, __sveltekit_dgwotw.element, {
+							node_ids: [0, 2, 4],
+							data,
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+		</div>
+	</body>
+</html>

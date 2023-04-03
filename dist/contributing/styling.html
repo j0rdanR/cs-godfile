@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="../favicon.png" />
+		<meta name="viewport" content="width=device-width" />
+		<meta http-equiv="content-security-policy" content="">
+		<link href="../_app/immutable/assets/_layout.8cd855d5.css" rel="stylesheet">
+		<link rel="modulepreload" href="../_app/immutable/entry/start.d1bd4c00.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/index.d49c866b.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/singletons.9486e9f9.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/paths.d82f2e15.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/control.e7f5239e.js">
+		<link rel="modulepreload" href="../_app/immutable/entry/app.aef4c0a3.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/preload-helper.41c905a7.js">
+		<link rel="modulepreload" href="../_app/immutable/entry/_layout.svelte.b2ae7994.js">
+		<link rel="modulepreload" href="../_app/immutable/entry/_layout.ts.984db11e.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/_layout.da46b06b.js">
+		<link rel="modulepreload" href="../_app/immutable/entry/(notes)-layout.svelte.9b607635.js">
+		<link rel="modulepreload" href="../_app/immutable/entry/(notes)-_...route_-page.svelte.ecfd1bdc.js">
+		<link rel="modulepreload" href="../_app/immutable/entry/(notes)-_...route_-page.ts.c6ae39ad.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/_page.1aa84044.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/index.2defaa64.js"><title>Styling documents - Contributing / The Godfile</title><!-- HEAD_svelte-19fz1ui_START --><!-- HEAD_svelte-19fz1ui_END -->
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents">
+
+
+<div class="flex flex-col h-screen"><header class="flex items-center justify-between px-4 h-16 bg-white border-b border-b-gray-200"><div><a href="/cs-godfile/"><div class="flex items-center gap-1 select-none"><span class="text-lg font-medium">Godfile</span>
+        <span class="font-bold text-xs uppercase text-white bg-gradient-to-tr from-red-700 to-amber-400 px-1 py-0.5 rounded" title="Version 0.0.5">Pre-Alpha</span></div></a></div>
+    <div><a href="/cs-godfile/contributing" class="font-medium text-gray-700 border-b-2 border-b-transparent hover:border-b-sky-500 hover:text-sky-600 transition">Contribute</a></div></header>
+
+  
+  
+  <div class="flex-1 overflow-hidden">
+
+
+
+
+
+
+
+<div class="flex w-full h-full"><nav class="w-72 overflow-y-auto p-4 flex flex-col gap-8 bg-white border-r border-r-gray-200"><div class="flex flex-col gap-3 pl-2"><p class="-ml-2 -mb-1 text-sm font-medium text-gray-500">Introduction</p>
+      <a href="/cs-godfile/">Home</a>
+      <a href="/cs-godfile/contributing">Contributing</a>
+      <a href="/cs-godfile/changelog">Changelog</a>
+      <a href="/cs-godfile/syllabus">Syllabus</a></div>
+    <div class="flex flex-col gap-3 pl-2"><p class="-ml-2 -mb-1 text-sm font-medium text-gray-500">Managing Data</p>
+      <a href="/cs-godfile/managing-data/normalisation">Normalisation</a></div></nav>
+  
+  <div class="flex-1 overflow-y-auto scroll-smooth">
+
+<div class="flex items-center justify-center gap-1.5 px-4 py-2.5 text-sm sticky top-0 z-10 text-red-800 bg-red-50"><svg width="20" height="20" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2Zm0 1.5a8.5 8.5 0 1 0 0 17 8.5 8.5 0 0 0 0-17Zm3.446 4.897.084.073a.75.75 0 0 1 .073.976l-.073.084L13.061 12l2.47 2.47a.75.75 0 0 1 .072.976l-.073.084a.75.75 0 0 1-.976.073l-.084-.073L12 13.061l-2.47 2.47a.75.75 0 0 1-.976.072l-.084-.073a.75.75 0 0 1-.073-.976l.073-.084L10.939 12l-2.47-2.47a.75.75 0 0 1-.072-.976l.073-.084a.75.75 0 0 1 .976-.073l.084.073L12 10.939l2.47-2.47a.75.75 0 0 1 .976-.072Z" fill="currentColor"></path></svg>
+		<span>Contributing to the Godfile is currently disabled until stable release.</span></div>
+
+<div class="fixed bottom-4 right-6 z-10 flex items-center justify-center gap-1.5 pl-3 pr-4 py-2.5 text-sm bg-amber-100 text-amber-800 rounded-lg"><svg width="20" height="20" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.75 3A3.25 3.25 0 0 1 21 6.25v11.5A3.25 3.25 0 0 1 17.75 21H6.25A3.25 3.25 0 0 1 3 17.75V6.25A3.25 3.25 0 0 1 6.25 3h11.5Zm.58 16.401-5.805-5.686a.75.75 0 0 0-.966-.071l-.084.07-5.807 5.687c.182.064.378.099.582.099h11.5c.203 0 .399-.035.58-.099l-5.805-5.686L18.33 19.4ZM17.75 4.5H6.25A1.75 1.75 0 0 0 4.5 6.25v11.5c0 .208.036.408.103.594l5.823-5.701a2.25 2.25 0 0 1 3.02-.116l.128.116 5.822 5.702c.067-.186.104-.386.104-.595V6.25a1.75 1.75 0 0 0-1.75-1.75Zm-2.498 2a2.252 2.252 0 1 1 0 4.504 2.252 2.252 0 0 1 0-4.504Zm0 1.5a.752.752 0 1 0 0 1.504.752.752 0 0 0 0-1.504Z" fill="currentColor"></path></svg>
+		<span>Previewing unpublished page</span>
+		<span class="absolute -top-0.5 -right-0.5 w-2.5 h-2.5 bg-amber-500 rounded-full animate-ping"></span></div>
+	<div class="w-full h-8 flex items-center justify-center bg-amber-400 text-sm uppercase font-bold text-gray-800">Preview mode</div>
+
+<div class="flex justify-between border-amber-400 border-x-8"><main class="prose flex-1 ml-16 mr-8 pt-12 pb-16">
+		
+		<h1 id="styling">Styling</h1>
+<p>This site uses mdsvex and variety of Remark/Rehype plugins to create rich content with a simplified syntax and developer experience.</p>
+<p>Due to the complexity and uniqueness of markdown used on this site, this document outlines the features available to authors.</p>
+<h2 id="using-svelte-components">Using Svelte components</h2>
+<p>The site’s content is located in the <code>/src/content</code> directory, which allows you to import components using the <code>$lib</code> alias syntax. Alternativly, you may use an absolute path.</p>
+<pre class="language-md"><!-- HTML_TAG_START --><code class="language-md"><span class="token comment">&lt;!-- example.md --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span>
+    import Component from '$lib/Component.svelte';
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+
+<span class="token title important"><span class="token punctuation">#</span> Example document</span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Component</span> <span class="token punctuation">/></span></span>
+
+<span class="token blockquote punctuation">></span> Some other markdown</code><!-- HTML_TAG_END --></pre>
+<p class="hint tip">While not mandatory, it is highly encouraged that you denote all files containing Svelte code with the <code>.svelte.md</code> syntax. This is purely semantics, as all files are resolved as Svelte components anyways (even if pure markdown).</p>
+<h2 id="rich-text">Rich text</h2>
+<p>All the basic markdown syntax can be applied. <a href="https://www.markdownguide.org/basic-syntax/" rel="nofollow noopener noreferrer" target="_blank">Markdown Guide’s</a> documentation is a good resource to start with.</p>
+<p>For example, define a table like this:</p>
+<pre class="language-md"><!-- HTML_TAG_START --><code class="language-md"><span class="token table"><span class="token table-header-row"><span class="token punctuation">|</span><span class="token table-header important"> Syntax      </span><span class="token punctuation">|</span><span class="token table-header important"> Description </span><span class="token punctuation">|</span>
+</span><span class="token table-line"><span class="token punctuation">|</span> <span class="token punctuation">-----------</span> <span class="token punctuation">|</span> <span class="token punctuation">-----------</span> <span class="token punctuation">|</span>
+</span><span class="token table-data-rows"><span class="token punctuation">|</span><span class="token table-data"> Header      </span><span class="token punctuation">|</span><span class="token table-data"> Title       </span><span class="token punctuation">|</span>
+<span class="token punctuation">|</span><span class="token table-data"> Paragraph   </span><span class="token punctuation">|</span><span class="token table-data"> Text        </span><span class="token punctuation">|</span></span></span></code><!-- HTML_TAG_END --></pre>
+<p>And it will look like this:</p>
+<table><thead><tr><th>Syntax</th>
+<th>Description</th></tr></thead>
+<tbody><tr><td>Header</td>
+<td>Title</td></tr>
+<tr><td>Paragraph</td>
+<td>Text</td></tr></tbody></table>
+<h3 id="links">Links</h3>
+<h4 id="internal">Internal</h4>
+<p>There is currently no way to define internal links. You must use the basic Markdown syntax with a relative URL.</p>
+<p>There are plans to implement the <code>remark-wiki-link</code> plugin to use a syntax like <code>[[Example Page]]</code> to redirect to <code>/example-page</code></p>
+<h4 id="external">External</h4>
+<p>External links will always open in a new tab. You can define them using the basic Markdown syntax.</p>
+<h3 id="emojis">Emojis</h3>
+<p>You can use emoji codes such as <code>:smile:</code> to render emojis easily 😄. Alternatively, you can use emoji shortcodes like <code>:-)</code>.</p>
+<h3 id="code-blocks">Code blocks</h3>
+<p>The default inline and fenced code blocks work, with the ability to specify a language for syntax highlighting in fenced blocks. If you wish to add a title to a code block, you can use this syntax:</p>
+<pre class="language-undefined"><!-- HTML_TAG_START --><code class="language-undefined">&#96;&#96;&#96;js title=&quot;helloWorld.js&quot;
+function helloWorld() &#123;&#125;
+&#96;&#96;&#96;</code><!-- HTML_TAG_END --></pre>
+<p>Looks like:</p>
+<div data-remark-code-title="true" data-language="js">helloWorld.js</div>
+<pre class="language-js"><!-- HTML_TAG_START --><code class="language-js"><span class="token keyword">function</span> <span class="token function">helloWorld</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span></code><!-- HTML_TAG_END --></pre>
+<h3 id="abbreviations">Abbreviations</h3>
+<p>Sometimes you may use an abbreviation multiple times across a single file. This allows you to write the full name once, and the parser will automatically detect all uses of the abbreviation.</p>
+<div data-remark-code-title="true" data-language="md">Define an abbreviation</div>
+<pre class="language-md"><!-- HTML_TAG_START --><code class="language-md">*<span class="token url-reference url"><span class="token punctuation">[</span><span class="token variable">HTML</span><span class="token punctuation">]</span><span class="token punctuation">:</span> Hyper</span> Text Markup Language</code><!-- HTML_TAG_END --></pre>
+<p>Then anytime you write <abbr title="Hyper Text Markup Language">HTML</abbr> it will look like this (Hint: hover over the word).</p>
+<p class="hint warn">Always define abbreviations at the top of the file, underneath the metadata section, but always above the page’s content. Keeping abbreviations in one place makes it easier to find them.</p>
+<h2 id="stylistic-elements">Stylistic elements</h2>
+<h3 id="hintsbanners">Hints/Banners</h3>
+<pre class="language-md"><!-- HTML_TAG_START --><code class="language-md">!> Info
+?> Warning
+x> Error</code><!-- HTML_TAG_END --></pre>
+<p class="hint tip">Info</p>
+<p class="hint warn">Warning</p>
+<p class="hint error">Error</p></main>
+	<div class="pt-12"><div class="sticky top-4 p-8 pr-16 flex flex-col gap-2 text-sm bg-white rounded-lg"><div class="border bg-gray-50 text-gray-700 rounded-md p-2 mb-2 space-y-2">
+				
+
+				
+				</div>
+			
+			
+			<p class="text-xs font-medium uppercase text-gray-500 mb-1 border-b p-1.5 min-w-[196px]">On this page</p>
+				
+					<a class="text-gray-500 hover:text-gray-900 transition" href="#styling"><p><!-- HTML_TAG_START -->&nbsp&nbsp&nbsp&nbsp<!-- HTML_TAG_END -->Styling</p></a>
+					<a class="text-gray-500 hover:text-gray-900 transition" href="#using-svelte-components"><p><!-- HTML_TAG_START -->&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<!-- HTML_TAG_END -->Using Svelte components</p></a>
+					<a class="text-gray-500 hover:text-gray-900 transition" href="#rich-text"><p><!-- HTML_TAG_START -->&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<!-- HTML_TAG_END -->Rich text</p></a>
+					<a class="text-gray-500 hover:text-gray-900 transition" href="#links"><p><!-- HTML_TAG_START -->&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<!-- HTML_TAG_END -->Links</p></a>
+					<a class="text-gray-500 hover:text-gray-900 transition" href="#internal"><p><!-- HTML_TAG_START -->&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<!-- HTML_TAG_END -->Internal</p></a>
+					<a class="text-gray-500 hover:text-gray-900 transition" href="#external"><p><!-- HTML_TAG_START -->&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<!-- HTML_TAG_END -->External</p></a>
+					<a class="text-gray-500 hover:text-gray-900 transition" href="#emojis"><p><!-- HTML_TAG_START -->&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<!-- HTML_TAG_END -->Emojis</p></a>
+					<a class="text-gray-500 hover:text-gray-900 transition" href="#code-blocks"><p><!-- HTML_TAG_START -->&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<!-- HTML_TAG_END -->Code blocks</p></a>
+					<a class="text-gray-500 hover:text-gray-900 transition" href="#abbreviations"><p><!-- HTML_TAG_START -->&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<!-- HTML_TAG_END -->Abbreviations</p></a>
+					<a class="text-gray-500 hover:text-gray-900 transition" href="#stylistic-elements"><p><!-- HTML_TAG_START -->&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<!-- HTML_TAG_END -->Stylistic elements</p></a>
+					<a class="text-gray-500 hover:text-gray-900 transition" href="#hintsbanners"><p><!-- HTML_TAG_START -->&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<!-- HTML_TAG_END -->Hints/Banners</p></a></div></div></div></div></div></div></div>
+
+
+			
+			<script>
+				{
+					__sveltekit_dgwotw = {
+						env: {},
+						assets: "/cs-godfile",
+						base: new URL("..", location).pathname.slice(0, -1),
+						element: document.currentScript.parentElement
+					};
+
+					const data = [null,null,null];
+
+					Promise.all([
+						import("../_app/immutable/entry/start.d1bd4c00.js"),
+						import("../_app/immutable/entry/app.aef4c0a3.js")
+					]).then(([kit, app]) => {
+						kit.start(app, __sveltekit_dgwotw.element, {
+							node_ids: [0, 2, 4],
+							data,
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+		</div>
+	</body>
+</html>

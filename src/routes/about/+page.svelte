@@ -10,6 +10,6 @@
   </div>
   
   <div class="prose mx-auto px-12 py-16">
-    <svelte:component this={component} />
+    <!-- <svelte:component this={component} /> -->
   </div>
 </div>
