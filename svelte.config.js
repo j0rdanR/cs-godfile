@@ -32,9 +32,9 @@ const config = {
       precompress: false,
 			strict: false,
 		}),
-		paths: {
-      base: dev ? '' : '/cs-godfile',
-    },
+		// paths: {
+    //   base: dev ? '' : '/cs-godfile',
+    // },
 		prerender: {
 			handleMissingId: 'ignore',
 		}

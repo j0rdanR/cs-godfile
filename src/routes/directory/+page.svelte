@@ -1,11 +1,10 @@
 <script lang="ts">
 	import type { PageData } from './$types';
 	export let data: PageData;
-  import { base } from '$app/paths';
 </script>
 
 {#each data?.documents as document}
-  <a href={`${base}/${document.route}`}><div class="p-4">
+  <a href={document.route}><div class="p-4">
     <p class="text-xl font-semibold">{document.metadata.title}</p>
     {#if document.metadata.path}
       <div class="flex items-center gap-1">
